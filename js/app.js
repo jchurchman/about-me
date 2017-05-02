@@ -44,11 +44,44 @@ if ( beer === "yes" || beer === "y" ) {
 
 // console.log( "Response to beer prompt: " + beer );
 
-// var jewelry = prompt( "Did Joe's BFA from Central Washington University carry an emphasis on Jewelry and Metalsmithing?" );
+var jewelry = prompt( "Did Joe's BFA from Central Washington University carry an emphasis on sculpture?" ).toLowerCase();
+
+if ( jewelry === "y" || jewelry === "yes" ) {
+   alert( "Trick question! He had an emphasis on Jewelry and Metalsmithing" );
+} else if ( jewelry === "n" || jewelry === "no" ) {
+   alert( "Correct. The emphasis of Joe's degree was on Jewelry and Metalsmithing." );
+} else {
+   jewelry = prompt( "Please type YES or NO for your response. You'd be surprised at the answer." ) ;
+}
+
+if ( jewelry === "yes" || jewelry === "y" ) {
+   console.log ( userName + " has said that " + jewelry + ", they think Joe sculpted." );
+} else if ( jewelry === "no" || jewelry === "n" ) {
+   console.log ( userName + " has said that " + jewelry + ", they know Joe made Jewelry." );
+} else {
+   console.log ( userName + " has entered an invalid option." );
+}
 
 // console.log( "Response to jewelry prompt: " + jewelry );
 
-// var family = prompt( "In all this crazy stuff, did you realize that Joe is supported by his wife and two dogs?" );
+var family = prompt( "In all this crazy stuff, did you realize that Joe is supported by his wife and two dogs?" ).toLowerCase();
+
+if ( family === "y" || family === "yes" ) {
+   alert( "Yeppers! Joe appreciates his wife and fur babies." );
+} else if ( family === "n" || family === "no" ) {
+   alert( "You crazy! Joe doesn't take his family for granted!" );
+} else {
+   family = prompt( "Please type YES or NO for your response. You probably won't be surprised at the answer." ) ;
+}
+
+if ( family === "yes" || family === "y" ) {
+   console.log ( userName + " has said that " + family + ", they know Joe is considerate." );
+} else if ( family === "no" || family === "n" ) {
+   console.log ( userName + " has said that " + family + ", they think Joe is an ass." );
+} else {
+   console.log ( userName + " has entered an invalid option." );
+}
+
 
 // console.log( "Response to family prompt: " + family );
 
