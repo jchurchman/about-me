@@ -31,12 +31,12 @@ if ( beer === "y" || beer === "yes" ) {
 } else if ( beer === "n" || beer === "no" ) {
    alert( "It's true! Just ask him about it. He'll go on and on and on." );
 } else {
-   intro = prompt( "Please type YES or NO for your response. You'd be surprised at the answer" ) ;
+   beer = prompt( "Please type YES or NO for your response. You'd be surprised at the answer." ) ;
 }
 
-if ( intro === "yes" || intro === "y" ) {
+if ( beer === "yes" || beer === "y" ) {
    console.log ( userName + " has said that " + beer + ", they can tell Joe brews beer." );
-} else if ( intro === "no" || intro === "n" ) {
+} else if ( beer === "no" || beer === "n" ) {
    console.log ( userName + " has said that " + beer + ", they don't think Joe makes beer." );
 } else {
    console.log ( userName + " has entered an invalid option." );
