@@ -24,7 +24,23 @@ if ( intro === "YES" || intro === "Y" ) {
 }
 // console.log( userName + " has said that " + intro + ", they want to play.");
 
-// var beer = prompt( "Would you believe he also likes to brew his own beer?");
+var beer = prompt( "Would you believe he also likes to brew his own beer?").toLowerCase();
+
+if ( beer === "y" || beer === "yes" ) {
+   alert( "Yep. He makes so much that he has to give it away!" );
+} else if ( beer === "n" || beer === "no" ) {
+   alert( "It's true! Just ask him about it. He'll go on and on and on." );
+} else {
+   intro = prompt( "Please type YES or NO for your response. You'd be surprised at the answer" ) ;
+}
+
+if ( intro === "yes" || intro === "y" ) {
+   console.log ( userName + " has said that " + beer + ", they can tell Joe brews beer." );
+} else if ( intro === "no" || intro === "n" ) {
+   console.log ( userName + " has said that " + beer + ", they don't think Joe makes beer." );
+} else {
+   console.log ( userName + " has entered an invalid option." );
+}
 
 // console.log( "Response to beer prompt: " + beer );
 
