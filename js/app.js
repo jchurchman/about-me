@@ -97,8 +97,8 @@ console.log( userName + " has logged on to the site.");
 
 var milesAnswer = 11;
 
-for ( var i = 0; i < 4; i++ ) {
-   var milesGuess = parseInt(prompt("Joe bikes to and from class as part of his commute every day. How many miles do you think he bikes total each day? I'll give you 4 guesses."));
+for ( var i = 4; i > 0; i-- ) {
+   var milesGuess = parseInt(prompt("Joe bikes to and from class as part of his commute every day. How many miles do you think he bikes total each day? You have " + i + " guesses."));
       console.log( userName + " has guessed that Joe bikes " + milesGuess + "miles per day.")
 
    if ( milesGuess < milesAnswer ) {
@@ -110,7 +110,8 @@ for ( var i = 0; i < 4; i++ ) {
       break;
    }
 
-   if ( i === 3 ) {
+   if ( i === 1 ) {
       alert( "Sorry you didn't guess it. The correct answer is that Joe bikes 11 miles a day.")
    }
 }
+
