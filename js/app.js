@@ -50,7 +50,7 @@ if ( jewelry === "y" || jewelry === "yes" ) {
 
 // console.log( "Response to jewelry prompt: " + jewelry );
 
-var family = prompt( "In all this crazy stuff, did you realize that Joe is supported by his wife and two dogs?" ).toLowerCase();
+var family = prompt( "In all this crazy stuff, did you realize that Joe is supported by his wife and dogs?" ).toLowerCase();
 
 if ( family === "y" || family === "yes" ) {
    alert( "Yeppers! Joe appreciates his wife and fur babies." );
@@ -79,5 +79,34 @@ if ( games === "y" || games === "yes" ) {
    console.log ( userName + " has entered an invalid option." );
 }
 
-
 // console.log( "Response to games prompt: " + games );
+
+var amp = prompt( "Yeah, turns out Joe loves games. Sometimes the more challenging ones are the most fun. Ready to amp this one up?")
+
+if ( amp === "y" || amp === "yes" ) {
+   alert( "All right! Let's do this!" );
+   console.log ( userName + " has said that " + amp + ", want a challenge." );
+} else if ( amp === "n" || amp === "no" ) {
+   alert( "Get it together! Life is all about challenges." );
+   console.log ( userName + " has said that " + amp + ", they're weak sauce." );
+} else {
+   amp = prompt( "Please type YES or NO for your response." ) ;
+   console.log ( userName + " has entered an invalid option." );
+}
+
+
+var milesAnswer = 11;
+
+for ( var i = 0; i < 4; i++ ) {
+   var milesGuess = parseInt(prompt("Joe bikes to and from class as part of his commute every day. How many miles do you think he bikes total each day?"));
+      console.log( userName + "has guessed that Joe bikes " + milesGuess + "miles per day.")
+
+   if ( milesGuess < milesAnswer ) {
+      prompt( "You're too low!");
+   } else if ( milesGuess > milesAnswer ) {
+      prompt( "You're too high!");
+   } else {
+      prompt( "That's, right, Joe bikes " + milesAnswer + " miles per day.")
+      break;
+   }
+}
