@@ -95,23 +95,46 @@ console.log( userName + " has logged on to the site.");
 // }
 
 
-var milesAnswer = 11;
+// var milesAnswer = 11;
 
-for ( var i = 4; i > 0; i-- ) {
-   var milesGuess = parseInt(prompt("Joe bikes to and from class as part of his commute every day. How many miles do you think he bikes total each day? You have " + i + " guesses."));
-      console.log( userName + " has guessed that Joe bikes " + milesGuess + "miles per day.")
+// for ( var i = 4; i > 0; i-- ) {
+//    var milesGuess = parseInt(prompt("Joe bikes to and from class as part of his commute every day. How many miles do you think he bikes total each day? You have " + i + " guesses."));
+//       console.log( userName + " has guessed that Joe bikes " + milesGuess + "miles per day.")
 
-   if ( milesGuess < milesAnswer ) {
-      alert( "You're too low!");
-   } else if ( milesGuess > milesAnswer ) {
-      alert( "You're too high!");
-   } else {
-      alert( "That's, right, Joe bikes " + milesAnswer + " miles per day.")
-      break;
+//    if ( milesGuess < milesAnswer ) {
+//       alert( "You're too low!");
+//    } else if ( milesGuess > milesAnswer ) {
+//       alert( "You're too high!");
+//    } else {
+//       alert( "That's, right, Joe bikes " + milesAnswer + " miles per day.")
+//       break;
+//    }
+
+//    if ( i === 1 ) {
+//       alert( "Sorry you didn't guess it. The correct answer is that Joe bikes 11 miles a day.")
+//    }
+// }
+
+var countries = ["Canada", "Mexico", "Italy", "France", "Netherlands", "Australia"];
+
+for ( var i = 6; i > 0; i-- ) {
+   var countriesGuess = prompt( "Ok, here's a really tough one: Which country has Joe travelled to? I'll give you " + i + " guesses this time.").toLowerCase();
+   console.log( "First Loop | we are on guess #:" + ( i + 1 ) );
+
+   for ( var n = 0; n < countries.length; n ++ ) {
+      console.log( "Second Loop | Checking index " + n + " of countries. Its data is " + countries[n] );
+
+
+      if ( countriesGuess === countries[n].toLowerCase() ) {
+         alert( "You got one! Joe has been to " + countries );
+         break;
+      }
    }
 
-   if ( i === 1 ) {
-      alert( "Sorry you didn't guess it. The correct answer is that Joe bikes 11 miles a day.")
-   }
+      // if (i === 1 ) {
+      //    alert( "Awww, you didn't guess any correctly. Joe has been to " + countries );
+      // }
 }
+
+
 
