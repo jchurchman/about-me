@@ -66,18 +66,18 @@ if ( family === "y" || family === "yes" ) {
 
 // console.log( "Response to family prompt: " + family );
 
-var coding = prompt( "This is the end of the game. Based on what you saw, do you think Joe likes coding?" ).toLowerCase();
+var games = prompt( "Pretty neat game, so far, huh? Do you think that Joe likes games?" ).toLowerCase();
 
-if ( coding === "y" || coding === "yes" ) {
-   alert( "Heck yes! Joe is having a blast with this stuff." );
-   console.log ( userName + " has said that " + coding + ", they know Joe is having a blast learning to code." );
-} else if ( coding === "n" || coding === "no" ) {
+if ( games === "y" || games === "yes" ) {
+   alert( "Heck yes! Joe devours board games." );
+   console.log ( userName + " has said that " + games + ", they know Joe likes board games." );
+} else if ( games === "n" || games === "no" ) {
    alert( "Well then, you need to get to know Joe a little bit more!" );
-   console.log ( userName + " has said that " + coding + ", they need to pay more attention to Joe." );
+   console.log ( userName + " has said that " + games + ", they need to pay more attention to Joe." );
 } else {
-   coding = prompt( "Please type YES or NO for your response. You probably won't be surprised at the answer." ) ;
+   games = prompt( "Please type YES or NO for your response. You probably won't be surprised at the answer." ) ;
    console.log ( userName + " has entered an invalid option." );
 }
 
 
-// console.log( "Response to coding prompt: " + coding );
+// console.log( "Response to games prompt: " + games );
