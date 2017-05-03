@@ -1,0 +1,54 @@
+* {
+   padding: 12px;
+   margin: 4px;
+   max-width: 95%;
+   max-height: 90%;
+}
+
+header {
+   background-color: lightblue;
+   padding: 20px;
+   max-width: 1000px;
+   max-height: 200px;
+}
+
+h1 {
+   color: black; 
+   font-size: 44px;
+   }
+
+h2 {
+   color: slategray;
+   font-size: 34px;
+}
+
+h3 {
+   color: darkblue;
+   font-size: 22px;
+}
+
+.BIO {
+   border: 2px solid limegreen;
+}
+
+.education {
+   border: 2px dashed crimson;
+   background-color: cornflowerblue;
+}
+
+table, th, tr, td {
+   border: 1px solid white;
+   color: indigo;
+}
+
+.work {
+   color: darkgoldenrod; 
+}
+
+aside {
+   border: 2px solid purple;
+   max-width: 400px;
+   max-height: 400px;
+   padding: 5px;
+   margin: 2px;
+}
