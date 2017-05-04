@@ -38,7 +38,7 @@ var q1 = function () {
         beer = prompt("Please type YES or NO for your response. You'd be surprised at the answer.");
         console.log(userName + " has entered an invalid option.");
     }
-}
+};
 
 
 // console.log( questions + " question in the quiz have been asked." );
@@ -61,126 +61,146 @@ var q2 = function () {
         jewelry = prompt("Please type YES or NO for your response. You'd be surprised at the answer.");
         console.log(userName + " has entered an invalid option.");
     }
-}
-
-q1();
-q2();
+};
 
 // console.log( questions + " question in the quiz have been asked." );
 // console.log( userName + "has made " + correct + " correct answers." );
 // console.log( "Response to jewelry prompt: " + jewelry );
 
-var family = prompt( "In all this crazy stuff, did you realize that Joe is supported by his wife and dogs?" ).toLowerCase();
-questions++;
+var q3 = function () {
 
-if ( family === "y" || family === "yes" ) {
-   alert( "Yeppers! Joe appreciates his wife and fur babies." );
-   console.log ( userName + " has said that " + family + ", they know Joe is considerate." );
-   correct++;
-} else if ( family === "n" || family === "no" ) {
-   alert( "You crazy! Joe doesn't take his family for granted!" );
-   console.log ( userName + " has said that " + family + ", they think Joe is an ass." );
-} else {
-   family = prompt( "Please type YES or NO for your response. You probably won't be surprised at the answer." ) ;
-   console.log ( userName + " has entered an invalid option." );
-}
+    var family = prompt("In all this crazy stuff, did you realize that Joe is supported by his wife and dogs?").toLowerCase();
+    questions++;
 
-console.log( questions + " question in the quiz have been asked." );
-console.log( userName + "has made " + correct + " correct answers." );
-// console.log( "Response to family prompt: " + family );
-
-var games = prompt( "Pretty neat game, so far, huh? Do you think that Joe likes games?" ).toLowerCase();
-questions++;
-
-if ( games === "y" || games === "yes" ) {
-   alert( "Heck yes! Joe devours board games." );
-   console.log ( userName + " has said that " + games + ", they know Joe likes board games." );
-   correct++;
-} else if ( games === "n" || games === "no" ) {
-   alert( "Well then, you need to get to know Joe a little bit more!" );
-   console.log ( userName + " has said that " + games + ", they need to pay more attention to Joe." );
-} else {
-   games = prompt( "Please type YES or NO for your response. You probably won't be surprised at the answer." ) ;
-   console.log ( userName + " has entered an invalid option." );
-}
-
-console.log( questions + " question in the quiz have been asked." );
-console.log( userName + "has made " + correct + " correct answers." );
-// console.log( "Response to games prompt: " + games );
-
-var amp = prompt( "Yeah, turns out Joe loves games. Sometimes the more challenging ones are the most fun. Ready to amp this one up?");
-questions++;
-
-if ( amp === "y" || amp === "yes" ) {
-   alert( "All right! Let's do this!" );
-   correct++;
-   console.log ( userName + " has said that " + amp + ", want a challenge." );
-} else if ( amp === "n" || amp === "no" ) {
-   alert( "Get it together! Life is all about challenges." );
-   console.log ( userName + " has said that " + amp + ", they're weak sauce." );
-} else {
-   amp = prompt( "Please type YES or NO for your response." ) ;
-   console.log ( userName + " has entered an invalid option." );
-}
-
-console.log( questions + " question in the quiz have been asked." );
-console.log( userName + "has made " + correct + " correct answers." );
-
-var milesAnswer = 11;
-questions++;
-
-for ( var i = 4; i > 0; i-- ) {
-   var milesGuess = parseInt(prompt("Joe bikes to and from class as part of his commute every day. How many miles do you think he bikes total each day? You have " + i + " guesses."));
-      console.log( userName + " has guessed that Joe bikes " + milesGuess + "miles per day.")
-   correctAnswer = false;
-   if ( milesGuess < milesAnswer ) {
-      alert( "You're too low!");
-   } else if ( milesGuess > milesAnswer ) {
-      alert( "You're too high!");
-   } else {
-      alert( "That's, right, Joe bikes " + milesAnswer + " miles per day.");
-      correct++;
-      correctAnswer = true;
-      break;
-   }
-
-   if ( correctAnswer === false && i === 1 ) {
-      alert( "Sorry you didn't guess it. The correct answer is that Joe bikes 11 miles a day.")
-   }
-}
-
-console.log( questions + " question in the quiz have been asked." );
-console.log( userName + "has made " + correct + " correct answers." );
-
-var countries = ["Canada", "Mexico", "Italy", "France", "Netherlands", "Australia"];
-questions++;
-
-for ( var guesses = 6; guesses > 0; guesses-- ) {
-   var countriesGuess = prompt( "Ok, here's a really tough one: Which country has Joe travelled to? I'll give you " + guesses + " guesses this time.").toLowerCase();
-   console.log( "First Loop | we are on guess #:" + ( guesses + 1 ) );
-
-var correctAnswer = false;
-
-   for ( var countriesIndex = 0; countriesIndex < countries.length; countriesIndex ++ ) {
-      console.log( "Second Loop | Checking index " + countriesIndex + " of countries. Its data is " + countries[countriesIndex] );
-
-      if ( countriesGuess === countries[countriesIndex].toLowerCase() ) {
-         alert( "You got one! Joe has been to " + countries );
-         correct++;
-         correctAnswer = true;
-      };
-   }
-   if ( correctAnswer === true ) {
-      break;
-   }
-      if ( correctAnswer === false && guesses === 1 ) {
-         alert( "Awww, you didn't guess any correctly. Joe has been to " + countries );
-      };
-
-}
+    if (family === "y" || family === "yes") {
+        alert("Yeppers! Joe appreciates his wife and fur babies.");
+        console.log(userName + " has said that " + family + ", they know Joe is considerate.");
+        correct++;
+    } else if (family === "n" || family === "no") {
+        alert("You crazy! Joe doesn't take his family for granted!");
+        console.log(userName + " has said that " + family + ", they think Joe is an ass.");
+    } else {
+        family = prompt("Please type YES or NO for your response. You probably won't be surprised at the answer.");
+        console.log(userName + " has entered an invalid option.");
+    }
+};
 
 // console.log( questions + " question in the quiz have been asked." );
 // console.log( userName + "has made " + correct + " correct answers." );
+// console.log( "Response to family prompt: " + family );
+
+var q4 = function () {
+
+    var games = prompt("Pretty neat game, so far, huh? Do you think that Joe likes games?").toLowerCase();
+    questions++;
+
+    if (games === "y" || games === "yes") {
+        alert("Heck yes! Joe devours board games.");
+        console.log(userName + " has said that " + games + ", they know Joe likes board games.");
+        correct++;
+    } else if (games === "n" || games === "no") {
+        alert("Well then, you need to get to know Joe a little bit more!");
+        console.log(userName + " has said that " + games + ", they need to pay more attention to Joe.");
+    } else {
+        games = prompt("Please type YES or NO for your response. You probably won't be surprised at the answer.");
+        console.log(userName + " has entered an invalid option.");
+    }
+};
+
+// console.log( questions + " question in the quiz have been asked." );
+// console.log( userName + "has made " + correct + " correct answers." );
+// console.log( "Response to games prompt: " + games );
+
+var q5 = function () {
+
+    var amp = prompt("Yeah, turns out Joe loves games. Sometimes the more challenging ones are the most fun. Ready to amp this one up?");
+    questions++;
+
+    if (amp === "y" || amp === "yes") {
+        alert("All right! Let's do this!");
+        correct++;
+        console.log(userName + " has said that " + amp + ", want a challenge.");
+    } else if (amp === "n" || amp === "no") {
+        alert("Get it together! Life is all about challenges.");
+        console.log(userName + " has said that " + amp + ", they're weak sauce.");
+    } else {
+        amp = prompt("Please type YES or NO for your response.");
+        console.log(userName + " has entered an invalid option.");
+    }
+};
+
+// console.log( questions + " question in the quiz have been asked." );
+// console.log( userName + "has made " + correct + " correct answers." );
+
+var q6 = function () {
+
+    var milesAnswer = 11;
+    questions++;
+
+    for (var i = 4; i > 0; i--) {
+        var milesGuess = parseInt(prompt("Joe bikes to and from class as part of his commute every day. How many miles do you think he bikes total each day? You have " + i + " guesses."));
+        console.log(userName + " has guessed that Joe bikes " + milesGuess + "miles per day.")
+        var correctAnswer = false;
+        if (milesGuess < milesAnswer) {
+            alert("You're too low!");
+        } else if (milesGuess > milesAnswer) {
+            alert("You're too high!");
+        } else {
+            alert("That's, right, Joe bikes " + milesAnswer + " miles per day.");
+            correct++;
+            correctAnswer = true;
+            break;
+        }
+
+        if (correctAnswer === false && i === 1) {
+            alert("Sorry you didn't guess it. The correct answer is that Joe bikes 11 miles a day.")
+        }
+    }
+};
+
+// console.log( questions + " question in the quiz have been asked." );
+// console.log( userName + "has made " + correct + " correct answers." );
+
+var q7 = function () {
+    var countries = ["Canada", "Mexico", "Italy", "France", "Netherlands", "Australia"];
+    questions++;
+
+    for (var guesses = 6; guesses > 0; guesses--) {
+        var countriesGuess = prompt("Ok, here's a really tough one: Which country has Joe travelled to? I'll give you " + guesses + " guesses this time.").toLowerCase();
+        console.log("First Loop | we are on guess #:" + (guesses + 1));
+
+        var correctAnswer = false;
+
+        for (var countriesIndex = 0; countriesIndex < countries.length; countriesIndex++) {
+            console.log("Second Loop | Checking index " + countriesIndex + " of countries. Its data is " + countries[countriesIndex]);
+
+            if (countriesGuess === countries[countriesIndex].toLowerCase()) {
+                alert("You got one! Joe has been to " + countries);
+                correct++;
+                correctAnswer = true;
+            };
+        }
+        if (correctAnswer === true) {
+            break;
+        }
+        if (correctAnswer === false && guesses === 1) {
+            alert("Awww, you didn't guess any correctly. Joe has been to " + countries);
+        };
+
+    }
+};
+
+// console.log( questions + " question in the quiz have been asked." );
+// console.log( userName + "has made " + correct + " correct answers." );
+
+
+q1();
+q2();
+q3();
+q4();
+q5();
+q6();
+q7();
 
 
 alert ( "Well, " + userName + ", you got " + correct + " answers correct out of " + questions + " quiz questions. Thanks for playing!");
