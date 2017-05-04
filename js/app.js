@@ -22,42 +22,52 @@ if ( intro === "Y" || intro === "YES" ) {
 
 // console.log( userName + " has said that " + intro + ", they want to play.");
 
-var beer = prompt( "Would you believe he also likes to brew his own beer?").toLowerCase(); 
-questions++;
+var q1 = function () {
 
-if ( beer === "y" || beer === "yes" ) {
-   alert( "Yep. He makes so much that he has to give it away!" );
-   console.log ( userName + " has said that " + beer + ", they can tell Joe brews beer." );
-   correct++;
-} else if ( beer === "n" || beer === "no" ) {
-   alert( "It's true! Just ask him about it. He'll go on and on and on." );
-   console.log ( userName + " has said that " + beer + ", they don't think Joe makes beer." );
-} else {
-   beer = prompt( "Please type YES or NO for your response. You'd be surprised at the answer." ) ;
-   console.log ( userName + " has entered an invalid option." );
+    var beer = prompt("Would you believe he also likes to brew his own beer?").toLowerCase();
+    questions++;
+
+    if (beer === "y" || beer === "yes") {
+        alert("Yep. He makes so much that he has to give it away!");
+        console.log(userName + " has said that " + beer + ", they can tell Joe brews beer.");
+        correct++;
+    } else if (beer === "n" || beer === "no") {
+        alert("It's true! Just ask him about it. He'll go on and on and on.");
+        console.log(userName + " has said that " + beer + ", they don't think Joe makes beer.");
+    } else {
+        beer = prompt("Please type YES or NO for your response. You'd be surprised at the answer.");
+        console.log(userName + " has entered an invalid option.");
+    }
 }
 
-console.log( questions + " question in the quiz have been asked." );
-console.log( userName + "has made " + correct + " correct answers." );
+
+// console.log( questions + " question in the quiz have been asked." );
+// console.log( userName + "has made " + correct + " correct answers." );
 // console.log( "Response to beer prompt: " + beer );
 
-var jewelry = prompt( "Did Joe's BFA from Central Washington University carry an emphasis on sculpture?" ).toLowerCase();
-questions++;
+var q2 = function () {
 
-if ( jewelry === "y" || jewelry === "yes" ) {
-   alert( "Trick question! He had an emphasis on Jewelry and Metalsmithing" );
-   console.log ( userName + " has said that " + jewelry + ", they think Joe sculpted." );
-} else if ( jewelry === "n" || jewelry === "no" ) {
-   alert( "Correct. The emphasis of Joe's degree was on Jewelry and Metalsmithing." );
-   console.log ( userName + " has said that " + jewelry + ", they know Joe made Jewelry." );
-   correct++;
-} else {
-   jewelry = prompt( "Please type YES or NO for your response. You'd be surprised at the answer." ) ;
-   console.log ( userName + " has entered an invalid option." );
+    var jewelry = prompt("Did Joe's BFA from Central Washington University carry an emphasis on sculpture?").toLowerCase();
+    questions++;
+
+    if (jewelry === "y" || jewelry === "yes") {
+        alert("Trick question! He had an emphasis on Jewelry and Metalsmithing");
+        console.log(userName + " has said that " + jewelry + ", they think Joe sculpted.");
+    } else if (jewelry === "n" || jewelry === "no") {
+        alert("Correct. The emphasis of Joe's degree was on Jewelry and Metalsmithing.");
+        console.log(userName + " has said that " + jewelry + ", they know Joe made Jewelry.");
+        correct++;
+    } else {
+        jewelry = prompt("Please type YES or NO for your response. You'd be surprised at the answer.");
+        console.log(userName + " has entered an invalid option.");
+    }
 }
 
-console.log( questions + " question in the quiz have been asked." );
-console.log( userName + "has made " + correct + " correct answers." );
+q1();
+q2();
+
+// console.log( questions + " question in the quiz have been asked." );
+// console.log( userName + "has made " + correct + " correct answers." );
 // console.log( "Response to jewelry prompt: " + jewelry );
 
 var family = prompt( "In all this crazy stuff, did you realize that Joe is supported by his wife and dogs?" ).toLowerCase();
@@ -169,7 +179,8 @@ var correctAnswer = false;
 
 }
 
-console.log( questions + " question in the quiz have been asked." );
-console.log( userName + "has made " + correct + " correct answers." );
+// console.log( questions + " question in the quiz have been asked." );
+// console.log( userName + "has made " + correct + " correct answers." );
+
 
 alert ( "Well, " + userName + ", you got " + correct + " answers correct out of " + questions + " quiz questions. Thanks for playing!");
