@@ -1,11 +1,11 @@
 "use strict";
 
+// TODO: Change intro prompt to just get name. Add Confirm to play game or break out of game.
 var userName = prompt( "Hello, what is your name?" );
 var questions = 0;
 var correct = 0;
 
 console.log( userName + " has logged on to the site.");
-
 var intro = prompt( "Hello " + userName + "! I bet you're here to learn about Joe. Would you like to play a quick guessing game to learn some neat stuff about him?" ).toUpperCase();
 console.log(intro);
 
@@ -21,7 +21,7 @@ if ( intro === "Y" || intro === "YES" ) {
 }
 
 // console.log( userName + " has said that " + intro + ", they want to play.");
-
+// TODO Fix nonsense responses to take user on an admonishing story.
 var q1 = function () {
 
     var beer = prompt("Would you believe he also likes to brew his own beer?").toLowerCase();
