@@ -1,53 +1,90 @@
 "use strict";
 
 // TODO: Change intro prompt to just get name. Add Confirm to play game or break out of game.
-var userName = prompt( "Hello, what is your name?" );
+var userName = prompt("Hello, what is your name?");
 var questions = 0;
 var correct = 0;
 
-console.log( userName + " has logged on to the site.");
+console.log(userName + " has logged on to the site.");
 var intro = confirm("Hello " + userName + "! I bet you're here to learn about Joe. Would you like to play a quick guessing game to learn some neat stuff about him?");
 
-if ( intro === true ) {
-   alert( "Great! Let's get started" );
-   console.log ( userName + " has said that they want to play." );
-   guessingGame();
-} else if ( intro === false ) {
-   alert( "That's alright, maybe next time!" );
-   console.log ( userName + " has said that they don't want to play." );
-}  
+if (intro === true) {
+    alert("Great! Let's get started");
+    console.log(userName + " has said that they want to play.");
+    guessingGame();
+} else if (intro === false) {
+    alert("That's alright, maybe next time!");
+    console.log(userName + " has said that they don't want to play.");
+}
 
 // console.log( userName + " has said that " + intro + ", they want to play.");
 // TODO Fix nonsense responses to take user on an admonishing story.
-function guessingGame () {
+function guessingGame() {
     var questionsArray = [
         "Do you think Joe likes to brew his own beer?",
         "Did Joe's BFA carry an emphasis on sculpture?",
         "Do you think that Joe likes games?",
         "Did Joe wear suit pants the first time he went rock climbing?",
-        "Do you think Joe was a basketball player in high school?"
-    ]
+        "Do you think Joe was a basketball player in high school?",
+        "Guess the number I'm thinking between 1 and 10! I'll give you 4 chances.",
+        "Which country have I been to?"
+    ];
     var answers1thru5 = [
         "YES",
         "Y",
         "NO",
         "N"
-    ]
+    ];
+    var countries = [
+        "Canada",
+        "Mexico",
+        "Italy",
+        "France",
+        "Netherlands",
+        "Australia"
+    ];
     var responseCorrect = [
         "Heck yes! Joe's a brewing fool.",
         "Trick question! He had an emphasis on Jewelry and Metalsmithing.",
         "Oh man, you have no idea!",
         "Actually, yeah. You're right.",
         "Nope, Joe was a wrestler."
-    ]
+    ];
     var responseIncorrect = [
         "It's true! Just ask him about it. He'll go on and on.",
         "Correct. It was on Jewelry and Metalsmithing.",
         "Clearly, you haven't been paying attention.",
         "Well, actually, it was kind of a weird day and, well, you're wrong.",
         "Right! Joe wrestled all four years in high school"
+    ];
+    var answerArray = [
+        "Yes",
+        "No",
+        "Yes",
+        "Yes",
+        "No"
     ]
-};
+    var i = 0
+    do {
+            var question = prompt(questionsArray[i]).toUpperCase();
+            if (question != "YES" &&
+                question != "Y" && 
+                question != "NO" && 
+                question != "N") {
+                alert("Please answer Yes or No");
+                console.log(i, questionsArray[i]);
+            } else if (question === answerArray[i]) {
+                alert(responseCorrect[i]);
+                i++;
+                console.log(i, responseCorrect[i]);
+            } else {
+                alert(responseIncorrect[i]);
+                i++;
+                console.log(i, responseIncorrect[i]);
+            }
+    } while (i < questionsArray.length);
+
+
 //     var q1 = function () {
 
 //         var beer = prompt("Would you believe he also likes to brew his own beer?").toLowerCase();
@@ -188,7 +225,6 @@ function guessingGame () {
 //     // console.log( userName + "has made " + correct + " correct answers." );
 
 //     var q7 = function () {
-//         var countries = ["Canada", "Mexico", "Italy", "France", "Netherlands", "Australia"];
 //         questions++;
 
 //         for (var guesses = 6; guesses > 0; guesses--) {
@@ -231,4 +267,4 @@ function guessingGame () {
 
 //     alert("Well, " + userName + ", you got " + correct + " answers correct out of " + questions + " quiz questions. Thanks for playing!");
 
-// }
+}
