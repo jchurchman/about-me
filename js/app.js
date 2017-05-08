@@ -1,6 +1,5 @@
 "use strict";
 
-// TODO: Change intro prompt to just get name. Add Confirm to play game or break out of game.
 var userName = prompt("Hello, what is your name?");
 
 console.log(userName + " has logged on to the site.");
@@ -15,8 +14,6 @@ if (intro === true) {
     console.log(userName + " has said that they don't want to play.");
 }
 
-// console.log( userName + " has said that " + intro + ", they want to play.");
-// TODO Fix nonsense responses to take user on an admonishing story.
 function guessingGame() {
     var questions = 0;
     var correct = 0;
@@ -29,14 +26,6 @@ function guessingGame() {
         "Guess the number I'm thinking between 1 and 10! I'll give you 4 chances.",
         "Which country have I been to?"
     ];
-    // var countries = [
-    //     "Canada",
-    //     "Mexico",
-    //     "Italy",
-    //     "France",
-    //     "Netherlands",
-    //     "Australia"
-    // ];
     var responseCorrect = [
         "Heck yes! Joe's a brewing fool.",
         "Correct. It was on Jewelry and Metalsmithing.",
@@ -94,7 +83,7 @@ function guessingGame() {
     if (intro === true) {
         var intro = confirm("This has been pretty fun so far, how about we amp things up?");
         if (intro === false) {
-            alert("That's too bad. Come back soon and play the rest of the game");
+            alert("That's too bad, " + userName + ". If you were curious, your final score was " + correct + " correct answers out of " + questions + " questions. Come back soon and play the rest of the game!");
             // i = 8;
             // console.log(i, intro);
         } else {
@@ -102,6 +91,7 @@ function guessingGame() {
             // i++;
             // console.log(i, intro);
             while (i === 5) {
+                var correctAnswer = false;
                 for (var x = 4; x > 0; x--) {
                     var guessNumber = parseInt(prompt("You have " + x + " guesses to pick the right number between 1 and 10."), 10);
                     if (guessNumber !== answerArray[5]) {
@@ -110,40 +100,47 @@ function guessingGame() {
                     } else {
                         alert("Congratulations, you got it!");
                         console.log("Guessed number: " + guessNumber + " counter i: " + i + " counter x: " + x + " Actual Answer: " + answerArray[5]);
+                        correctAnswer = true;
                         correct++;
                         break;
                     };
                 };
+                if (correctAnswer === false && guesses === 1) {
+                    alert("Awww, you didn't get it. The right answer was " + answerArray[5] + " Better luck next time!" );
+                }
                 i++;
                 questions++;
             };
             console.log("We got out of question 6!" + " Counter i: " + i);
-            console.log("Questions asked: " + questions + " Answers correct: " + correct); 
-        for (var guesses = 6; guesses > 0; guesses--) {
-            var countriesGuess = prompt("Ok, here's a really tough one: Which country has Joe travelled to? I'll give you " + guesses + " guesses this time.").toLowerCase();
-            console.log("First Loop | we are on guess #:" + (guesses + 1));
+            console.log("Questions asked: " + questions + " Answers correct: " + correct);
+            for (var guesses = 6; guesses > 0; guesses--) {
+                var countriesGuess = prompt("Ok, here's a really tough one: Which country has Joe travelled to? I'll give you " + guesses + " guesses this time.").toLowerCase();
+                console.log("First Loop | we are on guess #:" + (guesses));
 
-            var correctAnswer = false;
+                var correctAnswer = false;
 
-            for (var countriesIndex = 0; countriesIndex < countries.length; countriesIndex++) {
-                console.log("Second Loop | Checking index " + countriesIndex + " of countries. Its data is " + countries[countriesIndex]);
+                for (var countriesIndex = 0; countriesIndex < answerArray[6].length; countriesIndex++) {
+                    console.log("Second Loop | Checking index " + countriesIndex + " of countries. Its data is " + answerArray[6][countriesIndex]);
 
-                if (countriesGuess === countries[countriesIndex].toLowerCase()) {
-                    alert("You got one! Joe has been to " + countries);
-                    correct++;
-                    correctAnswer = true;
+                    if (countriesGuess === answerArray[6][countriesIndex].toLowerCase()) {
+                        alert("You got one! Joe has been to " + answerArray[6][0] + ", " + answerArray[6][1] + ", " + answerArray[6][2] + ", " + answerArray[6][3] + ", " + answerArray[6][4] + ", " + answerArray[6][5] + "." );
+                        correct++;
+                        correctAnswer = true;
+                    };
+                }
+                if (correctAnswer === true) {
+                    break;
+                }
+                if (correctAnswer === false && guesses === 1) {
+                    alert("Awww, you didn't guess any correctly. Joe has been to " + answerArray[6][0] + ", " + answerArray[6][1] + ", " + answerArray[6][2] + ", " + answerArray[6][3] + ", " + answerArray[6][4] + ", " + answerArray[6][5] + "." );
                 };
-            }
-            if (correctAnswer === true) {
-                break;
-            }
-            if (correctAnswer === false && guesses === 1) {
-                alert("Awww, you didn't guess any correctly. Joe has been to " + countries);
             };
-
-        }
+            questions++;
+            console.log("Questions asked: " + questions + " Answers correct: " + correct);
+            alert("Thank you for playing my game, " + userName + "!" + " Your final score was " + correct + " correct answers out of " + questions + " questions.");
         };
     };
+
 //     var q1 = function () {
 
 //         var beer = prompt("Would you believe he also likes to brew his own beer?").toLowerCase();
