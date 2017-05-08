@@ -2,8 +2,6 @@
 
 // TODO: Change intro prompt to just get name. Add Confirm to play game or break out of game.
 var userName = prompt("Hello, what is your name?");
-var questions = 0;
-var correct = 0;
 
 console.log(userName + " has logged on to the site.");
 var intro = confirm("Hello " + userName + "! I bet you're here to learn about Joe. Would you like to play a quick guessing game to learn some neat stuff about him?");
@@ -20,6 +18,8 @@ if (intro === true) {
 // console.log( userName + " has said that " + intro + ", they want to play.");
 // TODO Fix nonsense responses to take user on an admonishing story.
 function guessingGame() {
+    var questions = 0;
+    var correct = 0;
     var questionsArray = [
         "Do you think Joe likes to brew his own beer?",
         "Did Joe's BFA carry an emphasis on sculpture?",
@@ -29,62 +29,94 @@ function guessingGame() {
         "Guess the number I'm thinking between 1 and 10! I'll give you 4 chances.",
         "Which country have I been to?"
     ];
-    var answers1thru5 = [
-        "YES",
-        "Y",
-        "NO",
-        "N"
-    ];
-    var countries = [
-        "Canada",
-        "Mexico",
-        "Italy",
-        "France",
-        "Netherlands",
-        "Australia"
-    ];
+    // var countries = [
+    //     "Canada",
+    //     "Mexico",
+    //     "Italy",
+    //     "France",
+    //     "Netherlands",
+    //     "Australia"
+    // ];
     var responseCorrect = [
         "Heck yes! Joe's a brewing fool.",
-        "Trick question! He had an emphasis on Jewelry and Metalsmithing.",
+        "Correct. It was on Jewelry and Metalsmithing.",
         "Oh man, you have no idea!",
         "Actually, yeah. You're right.",
-        "Nope, Joe was a wrestler."
+        "Right! Joe wrestled all four years in high school"
     ];
     var responseIncorrect = [
         "It's true! Just ask him about it. He'll go on and on.",
-        "Correct. It was on Jewelry and Metalsmithing.",
+        "Trick question! He had an emphasis on Jewelry and Metalsmithing.",
         "Clearly, you haven't been paying attention.",
         "Well, actually, it was kind of a weird day and, well, you're wrong.",
-        "Right! Joe wrestled all four years in high school"
+        "Nope, Joe was a wrestler."
     ];
     var answerArray = [
-        "Yes",
-        "No",
-        "Yes",
-        "Yes",
-        "No"
+        "Y",
+        "N",
+        "Y",
+        "Y",
+        "N",
+        Math.floor((Math.random() * 10) + 1),
+        [
+            "Canada",
+            "Mexico",
+            "Italy",
+            "France",
+            "Netherlands",
+            "Australia"
+        ]
     ]
     var i = 0
     do {
             var question = prompt(questionsArray[i]).toUpperCase();
-            if (question != "YES" &&
-                question != "Y" && 
-                question != "NO" && 
-                question != "N") {
+            if (question.charAt(0) != "Y" &&
+                question.charAt(0) != "N") {
                 alert("Please answer Yes or No");
-                console.log(i, questionsArray[i]);
-            } else if (question === answerArray[i]) {
+                console.log("Counter i " + i + " Question asked " + questionsArray[i]);
+                i++
+            } else if (question.charAt(0) === answerArray[i]) {
+                console.log("Question asked: " + questionsArray[i] + " Response Given: " + question.charAt(0) + " Correct Answer " + answerArray[i] + " Counter i: " + i + " Response given " + responseCorrect[i]);
                 alert(responseCorrect[i]);
                 i++;
-                console.log(i, responseCorrect[i]);
+                questions++;
+                correct++;
+                console.log("Questions asked: " + questions + " Answers correct: " + correct );
             } else {
+                console.log("Question asked: " + questionsArray[i] + " Response Given: " + question.charAt(0) + " Incorrect Answer " + answerArray[i] + " Counter i: " + i + " Response given " + responseIncorrect[i]);
                 alert(responseIncorrect[i]);
                 i++;
-                console.log(i, responseIncorrect[i]);
+                questions++;
+                console.log("Questions asked: " + questions + " Answers correct: " + correct ); 
             }
-    } while (i < questionsArray.length);
-
-
+    } while (i < questionsArray.length-2);
+    while (intro === true) {
+        var intro = confirm("This has been pretty fun so far, how about we amp things up?");
+        if (intro === false) {
+            alert("That's too bad. Come back soon and play the rest of the game");
+            // i = 8;
+            // console.log(i, intro);
+        } else {
+            alert("Great! Get ready for the hard questions!");
+            // i++;
+            // console.log(i, intro);
+        };
+    };
+    while (i === 5) {
+        for (var x = 4; x > 0; x--) {
+            var guessNumber = parseInt(prompt("You have " + x + " guesses to pick the right number between 1 and 10."), 10);
+            if (guessNumber !== answerArray[5]) {
+                alert("Nope, try again");
+                console.log("Guessed number: " + guessNumber + " counter i: " + i + " counter x: " + x + " actual answer: " + answerArray[5]);
+            } else {
+                alert("Congratulations, you got it!");
+                console.log("Guessed number: " + guessNumber + " counter i: " + i + " counter x: " + x + " Actual Answer: " + answerArray[5]);
+                break;
+            }
+            i++;
+        }
+    }
+    console.log("We got out of question 6!")
 //     var q1 = function () {
 
 //         var beer = prompt("Would you believe he also likes to brew his own beer?").toLowerCase();
